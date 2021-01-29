@@ -6,6 +6,7 @@ import com.gregaria.restcontroller.entities.Todo;
 import com.gregaria.restcontroller.repositories.TodoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.querydsl.binding.QuerydslBindings.PathBinder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,4 +49,8 @@ public class TodoController {
         return new ResponseEntity<Todo>(t, HttpStatus.OK);
     }
 
+    @GetMapping("/active")
+    public @ResponseBody Iterable<Todo> getActive() {
+        return todoRepository.findByCompletedTrue();
+    }
 }

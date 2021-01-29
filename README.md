@@ -19,6 +19,7 @@ mvnw spring-boot:run
 - GET: [http://localhost:8080/hello](http://localhost:8080/hello)
   - params: `name`
 - GET: [http://localhost:8080/api/todos](http://localhost:8080/api/todos) . Lista con todos los TODOS disponibles
+- GET: [http://localhost:8080/api/todos/active](http://localhost:8080/api/todos/active) . Lista con todos los TODOS completos
 - POST: [http://localhost:8080/api/todos](http://localhost:8080/api/todos) . Crea un nuevo TODO con los parametros que se le pasan.
   - params:
     - `description`: string
